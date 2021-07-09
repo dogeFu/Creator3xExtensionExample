@@ -1,6 +1,6 @@
 'use strict';
 
-//面板实现代码
+//面板实现代码，关于面板的更深入的功能请看操官方文档
 
 // 面板的内容
 exports.template = `
@@ -29,8 +29,10 @@ exports.methods = {
 exports.ready = async function() {
     this.$.elem.innerHTML = 'Hello World';
    
+    //给面板里的按钮绑定了回调
     this.$.button.addEventListener('confirm', () => {
-        Editor.Message.send('hello-world', 'increasing'); //派发increasing消息，根据package.json配置，browser里的increasing方法会执行一次
+        //用代码发送increasing消息给hello-world插件
+        Editor.Message.send('hello-world', 'increasing'); //根据package.json配置，browser里的increasing方法会执行一次
     });
     //获取qurey-num消息对应方法的返回值
     this.$.num.innerHTML = await Editor.Message.request('hello-world', 'query-num');

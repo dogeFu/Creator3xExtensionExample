@@ -44,10 +44,12 @@ ps.不要用这个作为你的插件配置，注释会导致报错。要验证�
                 //消息回调函数名称，这个函数要在main字段对应的文件里存在，在这里就是browser.js里的log方法
             },
             "open-panel": {
-                "methods": ["openPanel"]
+                "methods": ["openPanel"]//第二个菜单对应了这个方法，去browser.js里看看他们都做了什么吧
             },           
             "increasing": {
                 "methods": ["increasing"]
+                //这个方法没有menu配置对应，所以不是通过菜单触发
+                //我们可以通过代码触发，去default.js里看看
             },
             "query-num": {
                 "methods": ["queryNum"]

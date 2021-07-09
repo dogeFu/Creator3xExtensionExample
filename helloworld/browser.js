@@ -16,7 +16,7 @@ exports.methods = {
     },
     increasing() {
         num++;
-        //广播消息通知面板刷新num字段
+        //广播了hello-world:increasing消息，于是这个消息对应的方法default.js里的increasing触发了
         Editor.Message.broadcast('hello-world:increasing', num);
     },
 };

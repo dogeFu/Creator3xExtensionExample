@@ -1,0 +1,42 @@
+{
+    "name": "hello-world",
+    "version": "1.0.0",
+    "main": "./browser.js",
+    "description": "一份简单的扩展",
+    "panels": {
+        "default": {
+            "title": "world panel",
+            "type": "dockable",
+            "main": "./panels/default.js",
+            "icon": "./panels/icons/icon.png"
+        }
+    },
+    "contributions": {
+        "menu": [{
+            "path": "Develop",
+            "label": "test",
+            "message": "log" 
+        }, {
+            "path": "i18n:menu.panel/Custom",
+            "label": "Open Custom Panal",
+            "message": "open-panel"
+        }],
+        "messages": {
+            "log": {
+                "methods": ["log"]
+            },
+            "open-panel": {
+                "methods": ["openPanel"]
+            },           
+            "increasing": {
+                "methods": ["increasing"]
+            },
+            "query-num": {
+                "methods": ["queryNum"]
+            },
+            "hello-world:increasing": {
+                "methods": ["default.increasing"]
+            }
+        }
+    }
+}
